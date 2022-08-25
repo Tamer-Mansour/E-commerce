@@ -5,21 +5,21 @@ import './bootstrap.min.css';
 import {Container} from "react-bootstrap";
 import Footer from "./components/Footer";
 import HomeScreen from "./screens/HomeScreen";
-import {BrowserRouter as Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route} from "react-router-dom";
 
 function App() {
     return (
-        <>
-            <Header/>
-            <Routes>
+        <div>
+            <Router>
+                <Header/>
                 <main className={'py-3'}>
                     <Container>
-                        <Route exact path="/" component={HomeScreen}/>
+                        <Route path="/home" component={HomeScreen}/>
                     </Container>
                 </main>
                 <Footer/>
-            </Routes>
-        </>
+            </Router>
+        </div>
     );
 }
 
