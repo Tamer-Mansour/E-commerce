@@ -3,6 +3,8 @@ import {Col, Row} from "react-bootstrap";
 import Product from "../components/Porduct/Product";
 import {useDispatch, useSelector} from "react-redux";
 import {listProducts} from "../actions/productActions";
+import Loader from "../components/loader/Loader";
+import Message from "../components/message/Message";
 
 const HomeScreen = () => {
     const dispatch = useDispatch();
@@ -16,27 +18,17 @@ const HomeScreen = () => {
         loadProducts();
     }, [dispatch]);
 // const products = []
-    return (
-        <>
-            <h1>Latest Products</h1>
-            {loading
-                ? <h2>Loading...</h2>
-                : error
-                    ? <h3>{error}</h3>
-                    : <Row>
-                        {products.length > 0 &&
-                            products.map(product => {
-                                return (
-                                    <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                                        <Product product={product}/>
-                                    </Col>
-                                );
-                            })}
-                    </Row>
-            }
+    return (<>
+        <h1>Latest Products</h1>
+        {loading ? <Loader/> : error ? <h1>{error}</h1>: <Row>
+            {products.length > 0 && products.map(product => {
+                return (<Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                    <Product product={product}/>
+                </Col>);
+            })}
+        </Row>}
 
-        </>
-    );
+    </>);
 }
 
 export default HomeScreen;
