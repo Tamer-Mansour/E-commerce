@@ -20,8 +20,8 @@ const HomeScreen = () => {
 // const products = []
     return (<>
         <h1>Latest Products</h1>
-        {loading ? <Loader/> : error ? <h1>{error}</h1>: <Row>
-            {products.length > 0 && products.map(product => {
+        {loading ? <Loader/> : error ? <Message variant={'danger'}>{error}</Message>: <Row>
+            {products.map(product => {
                 return (<Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                     <Product product={product}/>
                 </Col>);

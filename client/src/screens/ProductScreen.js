@@ -25,7 +25,7 @@ const ProductScreen = () => {
             <Link to={'/'} className={'btn btn-light my-3'}>Go Back</Link>
             <Row>
                 <Col md={6}>
-                    <Image src={product.image} alt={product.name} fluid />
+                    <Image src={product.image} alt={product.name} fluid/>
                 </Col>
                 <Col md={3}>
                     <ListGroup variant={'flush'}>
@@ -51,7 +51,7 @@ const ProductScreen = () => {
                                     Price:
                                 </Col>
                                 <Col>
-                                   $ {product.price}
+                                    $ {product.price}
                                 </Col>
                             </Row>
                         </ListGroup.Item>
@@ -61,12 +61,13 @@ const ProductScreen = () => {
                                     State:
                                 </Col>
                                 <Col>
-                                     {product.countInStock >0 ? 'In Stock' : 'Out Of Stock'}
+                                    {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
                                 </Col>
                             </Row>
                         </ListGroup.Item>
                         <ListGroup.Item>
-                            <Button className='btn-block' disabled={product.countInStock === 0} type={'button'}>Add to Cart</Button>
+                            <Button className='btn-block' disabled={product.countInStock === 0} type={'button'}>Add to
+                                Cart</Button>
                         </ListGroup.Item>
                         <ListGroup.Item>
 
