@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import ProductScreen from "./screens/ProductScreen";
 import PageNotFound from "./screens/PageNotFound";
 import CartScreen from "./screens/CartScreen";
+import LoginScreen from "./screens/LoginScreen";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                             <Route path="/product/:id" element={<ProductScreen/>}/>
                             <Route path="/cart/:id" element={<CartScreen/>}/>
                             <Route path="/cart" element={<CartScreen/>}/>
+                            <Route path="/login" element={<LoginScreen/>}/>
                             <Route path="*" element={<PageNotFound/>}/>
                         </Routes>
                     </Container>
